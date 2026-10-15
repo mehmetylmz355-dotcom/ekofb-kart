@@ -1,90 +1,155 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EkoFB Kart | İzmir'in Taraftar ve İndirim Kulübü</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Arka plana şık desen ve gradyan dokunuşları */
+        body {
+            background-color: #030712;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(234, 179, 8, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(30, 58, 138, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1) 0%, transparent 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Arka plandaki devasa silüet logo efekti */
+        .bg-logo-watermark {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background-image: url('ekofbflogo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body class="text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header / Navbar -->
-    <header class="border-b border-slate-800 py-4 px-6 flex justify-between items-center max-w-4xl mx-auto">
-        <div class="flex items-center space-x-3">
-            <img src="ekofbflogo.png" alt="EkoFB Logo" class="w-10 h-10 object-contain rounded-full bg-slate-900 p-1 border border-slate-700">
-            <h1 class="text-xl font-black tracking-wider text-yellow-400">EkoFB <span class="text-white">KART</span></h1>
-        </div>
-        <div class="flex items-center space-x-3">
-            <a href="#nasil-alinir" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium px-3 py-2 rounded-xl text-sm transition">Kart Nasıl Alınır?</a>
-            <a href="#sponsorlar" class="bg-yellow-400 text-slate-950 font-bold px-4 py-2 rounded-xl text-sm hover:bg-yellow-300 transition">İndirimler</a>
-        </div>
-    </header>
+    <!-- Arka Plan Filigran Logo -->
+    <div class="bg-logo-watermark"></div>
 
-    <!-- Hero Section -->
-    <section class="max-w-4xl mx-auto px-6 py-16 text-center">
-        <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest">İzmir Ekonomi Üni • EkoFB</span>
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-6 mb-4">
-            Tek Kartla Kahveden Yemeğe <br><span class="text-yellow-400">İndirim Masada!</span>
-        </h2>
-        <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
-            EkoFB Kart ile Balçova çevresindeki anlaşmalı mekanlarda özel indirimlerden yararlan, kulübe destek ol.
-        </p>
-        <div class="flex justify-center gap-4">
-            <a href="#sponsorlar" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-yellow-400/10">İndirimleri Gör</a>
-            <a href="#nasil-alinir" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-medium px-6 py-3 rounded-xl transition">Kartı Edin</a>
-        </div>
-    </section>
-
-    <!-- Kart Nasıl Alınır Section -->
-    <section id="nasil-alinir" class="max-w-4xl mx-auto px-6 py-12 border-t border-slate-900">
-        <h3 class="text-2xl font-bold mb-6 text-yellow-400 text-center">EkoFB Kart Nasıl Alınır?</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-                <div class="text-yellow-400 font-black text-xl mb-2">01</div>
-                <h4 class="font-bold text-lg mb-1">Stantlarımızı Ziyaret Et</h4>
-                <p class="text-slate-400 text-sm">Kampüs içinde açacağımız kulüp stantlarına uğrayarak kaydını yaptırabilirsin.</p>
-            </div>
-            <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-                <div class="text-yellow-400 font-black text-xl mb-2">02</div>
-                <h4 class="font-bold text-lg mb-1">Sosyal Medyadan Ulaş</h4>
-                <p class="text-slate-400 text-sm">Instagram hesaplarımız üzerinden DM atarak kart talebinde bulunabilirsin.</p>
-            </div>
-            <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-                <div class="text-yellow-400 font-black text-xl mb-2">03</div>
-                <h4 class="font-bold text-lg mb-1">İndirimlerin Tadını Çıkar</h4>
-                <p class="text-slate-400 text-sm">Kartını alıp Balçova'daki anlaşmalı mekanlarda anında indirim kazanmaya başla.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sponsorlar & İndirimler -->
-    <section id="sponsorlar" class="max-w-4xl mx-auto px-6 py-12 border-t border-slate-900 mb-20">
-        <h3 class="text-2xl font-bold mb-8 text-yellow-400 text-center">Anlaşmalı Mekanlar & İndirimler</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative overflow-hidden">
-                <div class="flex justify-between items-start mb-4">
+    <div>
+        <!-- Header / Navbar -->
+        <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 py-4 px-6">
+            <div class="max-w-4xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="ekofbflogo.png" alt="EkoFB Logo" class="w-11 h-11 object-contain rounded-full bg-slate-900 p-1 border border-yellow-500/40 shadow-md shadow-yellow-500/10">
                     <div>
-                        <h4 class="font-bold text-lg">Örnek Kafe (Balçova)</h4>
-                        <p class="text-slate-400 text-sm mt-1">Tüm sıcak içeceklerde ve kahvaltıda geçerlidir.</p>
+                        <h1 class="text-xl font-black tracking-wider text-yellow-400">EkoFB <span class="text-white">KART</span></h1>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">İzmir Ekonomi Üni</p>
                     </div>
-                    <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1 rounded-full">%15 İndirim</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="#nasil-alinir" class="bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-200 font-medium px-3.5 py-2 rounded-xl text-sm transition">Kart Nasıl Alınır?</a>
+                    <a href="#sponsorlar" class="bg-yellow-400 text-slate-950 font-bold px-4 py-2 rounded-xl text-sm hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20">İndirimler</a>
                 </div>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative overflow-hidden">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <h4 class="font-bold text-lg">Burger & Fast Food Mekanı</h4>
-                        <p class="text-slate-400 text-sm mt-1">EkoFB kart sahiplerine özel set menülerde %20 indirim.</p>
-                    </div>
-                    <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 text-xs font-bold px-3 py-1 rounded-full">Özel Menü</span>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-yellow-400/10 text-yellow-400 border border-yellow-400/30 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                <span>İzmir Ekonomi Üni • Resmi Taraftar Hareketi</span>
+            </div>
+            
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Tek Kartla Kahveden Yemeğe <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 drop-shadow-sm">İndirim Masada!</span>
+            </h2>
+            
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                Balçova çevresindeki anlaşmalı mekanlarda cebini rahatlat, EkoFB Kart ile ayrıcalıklı yaşa, kulübüne güç kat.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#sponsorlar" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition shadow-xl shadow-yellow-400/20 flex items-center justify-center space-x-2">
+                    <span>İndirimli Mekanları Gör</span>
+                </a>
+                <a href="#nasil-alinir" class="bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-medium px-8 py-3.5 rounded-xl transition flex items-center justify-center">
+                    <span>Kartı Nasıl Alırım?</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Kart Nasıl Alınır Section -->
+        <section id="nasil-alinir" class="max-w-4xl mx-auto px-6 py-16 relative z-10">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-yellow-400">EkoFB Kart Nasıl Alınır?</h3>
+                <p class="text-slate-400 text-sm mt-2">3 adımda kartını kap, indirimlerden anında yararlanmaya başla.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900/80 border border-slate-800/90 hover:border-yellow-500/50 p-6 rounded-2xl transition duration-300 shadow-xl backdrop-blur-sm group">
+                    <div class="text-yellow-400 font-black text-2xl mb-3 group-hover:scale-110 transition transform origin-left">01</div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Stantlarımızı Ziyaret Et</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Kampüs içinde kuracağımız kulüp stantlarına uğrayarak kaydını yaptırabilirsin.</p>
+                </div>
+                
+                <div class="bg-slate-900/80 border border-slate-800/90 hover:border-yellow-500/50 p-6 rounded-2xl transition duration-300 shadow-xl backdrop-blur-sm group">
+                    <div class="text-yellow-400 font-black text-2xl mb-3 group-hover:scale-110 transition transform origin-left">02</div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Sosyal Medyadan Ulaş</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Instagram hesaplarımız üzerinden DM atarak hızlıca kart talebinde bulunabilirsin.</p>
+                </div>
+                
+                <div class="bg-slate-900/80 border border-slate-800/90 hover:border-yellow-500/50 p-6 rounded-2xl transition duration-300 shadow-xl backdrop-blur-sm group">
+                    <div class="text-yellow-400 font-black text-2xl mb-3 group-hover:scale-110 transition transform origin-left">03</div>
+                    <h4 class="font-bold text-lg mb-2 text-white">İndirimlerin Tadını Çıkar</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Kartını alıp Balçova'daki anlaşmalı mekanlarda cüzdanını korumaya başla.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Sponsorlar & İndirimler -->
+        <section id="sponsorlar" class="max-w-4xl mx-auto px-6 py-16 relative z-10 mb-12">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-yellow-400">Anlaşmalı Mekanlar & İndirimler</h3>
+                <p class="text-slate-400 text-sm mt-2">Balçova'da EkoFB Kart sahiplerine özel ayrıcalık sunan ilk mekanlar.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-2xl relative overflow-hidden shadow-xl hover:border-emerald-500/40 transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Örnek Kafe (Balçova)</h4>
+                            <p class="text-slate-400 text-sm mt-1">Tüm sıcak içeceklerde ve kahvaltıda geçerlidir.</p>
+                        </div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">%15 İndirim</span>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-900/90 border border-slate-800 p-6 rounded-2xl relative overflow-hidden shadow-xl hover:border-yellow-500/40 transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Burger & Fast Food Mekanı</h4>
+                            <p class="text-slate-400 text-sm mt-1">EkoFB kart sahiplerine özel set menülerde indirim fırsatı.</p>
+                        </div>
+                        <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">Özel Menü</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900 py-6 text-center text-slate-500 text-sm">
-        <p>&copy; 2025-2026 Ekonomi Fenerbahçeliler Kulübü. Tüm hakları saklıdır.</p>
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-slate-500 text-sm relative z-10">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <img src="ekofbflogo.png" alt="Logo" class="w-6 h-6 object-contain rounded-full">
+                <span class="text-slate-400 font-semibold text-xs">Ekonomi Fenerbahçeliler Kulübü</span>
+            </div>
+            <p class="text-xs">&copy; 2025-2026 Tüm hakları saklıdır.</p>
+        </div>
     </footer>
 
 </body>
