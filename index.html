@@ -36,7 +36,7 @@
                 <span class="bg-yellow-400 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded uppercase tracking-wider">KART</span>
             </div>
             <div class="flex items-center space-x-5">
-                <a href="#kayit" class="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition hidden md:inline-block">Dijital Kayıt</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2tquvwKHW20C_iItWP0Ls_AMUK_sOk1ausupEQ6AC9jX2eA/viewform" target="_blank" class="text-sm font-semibold text-yellow-400 hover:text-yellow-300 transition hidden md:inline-block">Dijital Kayıt</a>
                 <a href="#nasil-alinir" class="text-sm font-semibold text-slate-300 hover:text-white transition hidden md:inline-block">Nasıl Alınır?</a>
                 <a href="#sponsorlar" class="bg-yellow-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20">
                     İndirimler
@@ -65,10 +65,10 @@
                     EkoFB Kart ile Balçova çevresindeki anlaşmalı mekanlarda özel indirimlerden yararlan, cebini korurken kulübüne güç kat.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#kayit" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold px-8 py-4 rounded-2xl text-center transition shadow-xl shadow-yellow-400/20">
-                        Hemen Kart Başvurusu Yap
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2tquvwKHW20C_iItWP0Ls_AMUK_sOk1ausupEQ6AC9jX2eA/viewform" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold px-8 py-4 rounded-2xl text-center transition shadow-xl shadow-yellow-400/20 flex items-center justify-center space-x-2">
+                        <span>Hemen Kart Başvurusu Yap</span>
                     </a>
-                    <a href="#sponsorlar" class="bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-2xl text-center transition">
+                    <a href="#sponsorlar" class="bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-2xl text-center transition flex items-center justify-center">
                         İndirimleri İncele
                     </a>
                 </div>
@@ -125,60 +125,20 @@
             </div>
         </section>
 
-        <!-- DİJİTAL KAYIT / BAŞVURU FORMU SECTION (ÇÖKMEYEN JS YAPI) -->
+        <!-- DİJİTAL KAYIT YÖNLENDİRME BANNERI -->
         <section id="kayit" class="max-w-4xl mx-auto px-6 py-16">
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/40 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 border-2 border-yellow-400/40 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden text-center">
                 <div class="absolute -right-20 -top-20 w-60 h-60 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
                 
-                <div class="text-center mb-10">
-                    <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Hızlı Başvuru</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-3 tracking-tight">EkoFB Kart Dijital Kayıt Formu</h2>
-                    <p class="text-slate-400 mt-2 text-sm md:text-base">Bilgilerini doldur, kartın hazır olduğunda seninle iletişime geçelim.</p>
+                <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Hızlı Başvuru</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-4 tracking-tight">EkoFB Kart Dijital Kayıt Formu</h2>
+                <p class="text-slate-400 mt-3 max-w-xl mx-auto text-base">Hemen formu doldurarak kart ön başvirunu yap, Balçova'daki indirimlerden ilk sen yararlanmaya başla!</p>
+
+                <div class="mt-8">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2tquvwKHW20C_iItWP0Ls_AMUK_sOk1ausupEQ6AC9jX2eA/viewform" target="_blank" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold px-10 py-4 rounded-2xl transition shadow-2xl shadow-yellow-400/30 text-lg">
+                        Kayıt Formunu Aç 🚀
+                    </a>
                 </div>
-
-                <!-- Başarılı Kayıt Mesajı (Gizli Başlar) -->
-                <div id="basariMesaji" class="hidden mb-8 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 p-6 rounded-2xl text-center">
-                    <h3 class="text-xl font-bold mb-1">Başvurun Başarıyla Alındı! 💛💙</h3>
-                    <p class="text-sm text-slate-300">Bilgilerin sisteme kaydedildi. Kartın hazır olduğunda Instagram üzerinden seninle iletişime geçeceğiz.</p>
-                </div>
-
-                <!-- Form -->
-                <form id="basvuruFormu" onsubmit="formGonder(event)" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Ad Soyad</label>
-                            <input type="text" id="adSoyad" required placeholder="Adını ve soyadını yaz..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Telefon Numarası</label>
-                            <input type="tel" id="telefon" required placeholder="0532 XXX XX XX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Bölüm / Sınıf</label>
-                            <input type="text" id="bolum" required placeholder="Örn: Bilgisayar Mühendisliği / 2" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Instagram Kullanıcı Adı (İletişim için)</label>
-                            <input type="text" id="instagram" required placeholder="@kullaniciadi" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-4 rounded-xl text-center transition shadow-xl shadow-yellow-400/20 text-lg mt-4 cursor-pointer">
-                        Kartımı Oluştur / Başvuruyu Tamamla
-                    </button>
-                    <p class="text-center text-xs text-slate-500 mt-3">Başvuru yaptıktan sonra stantlarımızdan veya sosyal medya üzerinden kartını teslim alabilirsin.</p>
-                </form>
-
-                <script>
-                    function formGonder(event) {
-                        event.preventDefault(); // Sayfanın çökmesini / yenilenmesini engeller
-                        document.getElementById('basvuruFormu').style.display = 'none';
-                        document.getElementById('basariMesaji').classList.remove('hidden');
-                    }
-                </script>
             </div>
         </section>
 
@@ -193,7 +153,7 @@
                 <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl">
                     <div class="bg-yellow-400 text-slate-950 rounded-2xl w-14 h-14 flex items-center justify-center text-2xl font-black mb-6 shadow-md">01</div>
                     <h3 class="text-xl font-bold mb-3 text-white">Formu Doldur</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Yukarıdaki dijital kayıt formunu doldurarak ön başvurusunu hızlıca gerçekleştir.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Yukarıdaki dijital kayıt formuna tıklayarak bilgilerini eksiksiz doldur.</p>
                 </div>
                 <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl">
                     <div class="bg-yellow-400 text-slate-950 rounded-2xl w-14 h-14 flex items-center justify-center text-2xl font-black mb-6 shadow-md">02</div>
