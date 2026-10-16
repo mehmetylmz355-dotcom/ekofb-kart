@@ -72,8 +72,9 @@
                 </div>
             </div>
 
-            <!-- Sağ Taraf: Dijital Kart Önizlemesi -->
-            <div class="flex justify-center">
+            <!-- Sağ Taraf: Dijital Kart Önizlemesi & Stant QR Alanı -->
+            <div class="flex flex-col items-center justify-center space-y-6">
+                <!-- Dijital Kart -->
                 <div class="w-full max-w-sm bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 border-2 border-yellow-400/50 rounded-3xl p-7 card-glow relative overflow-hidden">
                     <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-yellow-400/15 rounded-full blur-3xl"></div>
                     <div class="flex justify-between items-start mb-8">
@@ -96,6 +97,19 @@
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                             <span>Aktif İndirim</span>
                         </span>
+                    </div>
+                </div>
+
+                <!-- Stant / Afiş İçin QR Kod Kartı -->
+                <div class="w-full max-w-sm bg-slate-900/90 border border-slate-800 rounded-3xl p-5 flex items-center space-x-5 shadow-xl">
+                    <div class="bg-white p-2 rounded-2xl flex-shrink-0 shadow-md">
+                        <!-- Google Formuna Yönlendiren Canlı QR Kod -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://docs.google.com/forms/d/e/1FAIpQLSd2tquvwKHW20C_iItWP0Ls_AMUK_sOk1ausupEQ6AC9jX2eA/viewform" alt="EkoFB Kart QR Kod" class="w-24 h-24 object-contain">
+                    </div>
+                    <div>
+                        <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Stant & Afiş İçin</span>
+                        <h4 class="text-white font-bold text-sm mt-1.5">Hemen Okut, Kaydol!</h4>
+                        <p class="text-slate-400 text-xs mt-1 leading-relaxed">Telefon kameranla taraterek formu 5 saniyede doldurabilirsin.</p>
                     </div>
                 </div>
             </div>
@@ -177,7 +191,6 @@
                     </p>
                 </div>
                 <div class="w-full md:w-auto flex-shrink-0">
-                    <!-- WhatsApp veya İletişim Yönlendirmesi -->
                     <a href="https://instagram.com/ekofb" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-yellow-400 font-bold px-8 py-4 rounded-2xl transition shadow-lg text-center">
                         <span>💬 Instagram ile İletişime Geç</span>
                     </a>
