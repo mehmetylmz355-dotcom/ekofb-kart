@@ -7,11 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-color: #040814;
+            /* Arka planı sarı ve canlı lacivert tonlarıyla zenginleştirip hareketlendirdik */
+            background-color: #050b1e;
             background-image: 
-                radial-gradient(circle at 20% 15%, rgba(30, 58, 138, 0.35) 0%, transparent 45%),
-                radial-gradient(circle at 80% 85%, rgba(202, 138, 4, 0.25) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(11, 17, 32, 0.9) 0%, transparent 100%);
+                radial-gradient(circle at 10% 20%, rgba(234, 179, 8, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(30, 64, 175, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 50% 30%, rgba(29, 78, 216, 0.2) 0%, transparent 60%),
+                linear-gradient(to bottom, #060e24, #030712);
             position: relative;
             overflow-x: hidden;
             margin: 0;
@@ -48,12 +50,12 @@
         <!-- Hero Section -->
         <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div>
-                <!-- Büyütülmüş ve Odaklanmış Logo Alanı -->
-                <div class="mb-8 flex items-center space-x-5 bg-slate-900/70 border border-slate-800 p-5 rounded-3xl w-fit backdrop-blur-md shadow-2xl">
+                <!-- Büyütülmüş Logo Alanı (Yazısız, Sade ve Karizmatik) -->
+                <div class="mb-8 flex items-center space-x-5 bg-slate-900/60 border border-slate-800/80 p-5 rounded-3xl w-fit backdrop-blur-md shadow-2xl">
                     <img src="sari_logo.png" alt="EkoFB Logo" class="w-24 h-24 md:w-28 md:h-28 object-cover rounded-2xl border-2 border-yellow-400 logo-shadow">
                     <div>
-                        <span class="bg-yellow-400/10 text-yellow-400 border border-yellow-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Resmi Platform</span>
-                        <h2 class="text-2xl font-black text-white tracking-tight mt-2">EkoFB KART</h2>
+                        <span class="text-yellow-400 text-xs font-bold uppercase tracking-wider">Öğrenci İndirim Hareketi</span>
+                        <h2 class="text-2xl font-black text-white tracking-tight mt-1">EkoFB KART</h2>
                     </div>
                 </div>
 
@@ -104,7 +106,7 @@
 
         <!-- Canlı İstatistik Alanı -->
         <section class="max-w-6xl mx-auto px-6 py-10">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-900/70 border border-slate-800 rounded-3xl p-8 backdrop-blur-md text-center shadow-xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-900/60 border border-slate-800 rounded-3xl p-8 backdrop-blur-md text-center shadow-xl">
                 <div>
                     <div class="text-3xl md:text-4xl font-extrabold text-yellow-400 mb-1">Balçova</div>
                     <div class="text-xs md:text-sm text-slate-400 font-medium">Ana Lokasyon</div>
