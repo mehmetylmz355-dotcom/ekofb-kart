@@ -125,7 +125,7 @@
             </div>
         </section>
 
-        <!-- DİJİTAL KAYIT / BAŞVURU FORMU SECTION -->
+        <!-- DİJİTAL KAYIT / BAŞVURU FORMU SECTION (ÇÖKMEYEN JS YAPI) -->
         <section id="kayit" class="max-w-4xl mx-auto px-6 py-16">
             <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/40 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute -right-20 -top-20 w-60 h-60 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -136,35 +136,49 @@
                     <p class="text-slate-400 mt-2 text-sm md:text-base">Bilgilerini doldur, kartın hazır olduğunda seninle iletişime geçelim.</p>
                 </div>
 
-                <!-- Form Başlangıcı (Netlify / Formspree veya Google Forms entegrasyonu için uygun yapı) -->
-                <form action="#" method="POST" class="space-y-6">
+                <!-- Başarılı Kayıt Mesajı (Gizli Başlar) -->
+                <div id="basariMesaji" class="hidden mb-8 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 p-6 rounded-2xl text-center">
+                    <h3 class="text-xl font-bold mb-1">Başvurun Başarıyla Alındı! 💛💙</h3>
+                    <p class="text-sm text-slate-300">Bilgilerin sisteme kaydedildi. Kartın hazır olduğunda Instagram üzerinden seninle iletişime geçeceğiz.</p>
+                </div>
+
+                <!-- Form -->
+                <form id="basvuruFormu" onsubmit="formGonder(event)" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Ad Soyad</label>
-                            <input type="text" required placeholder="Adını ve soyadını yaz..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
+                            <input type="text" id="adSoyad" required placeholder="Adını ve soyadını yaz..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Telefon Numarası</label>
-                            <input type="tel" required placeholder="0532 XXX XX XX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
+                            <input type="tel" id="telefon" required placeholder="0532 XXX XX XX" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Bölüm / Sınıf</label>
-                            <input type="text" required placeholder="Örn: Bilgisayar Mühendisliği / 2" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
+                            <input type="text" id="bolum" required placeholder="Örn: Bilgisayar Mühendisliği / 2" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Instagram Kullanıcı Adı (İletişim için)</label>
-                            <input type="text" required placeholder="@kullaniciadi" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
+                            <input type="text" id="instagram" required placeholder="@kullaniciadi" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-yellow-400 transition">
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-4 rounded-xl text-center transition shadow-xl shadow-yellow-400/20 text-lg mt-4">
+                    <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-4 rounded-xl text-center transition shadow-xl shadow-yellow-400/20 text-lg mt-4 cursor-pointer">
                         Kartımı Oluştur / Başvuruyu Tamamla
                     </button>
                     <p class="text-center text-xs text-slate-500 mt-3">Başvuru yaptıktan sonra stantlarımızdan veya sosyal medya üzerinden kartını teslim alabilirsin.</p>
                 </form>
+
+                <script>
+                    function formGonder(event) {
+                        event.preventDefault(); // Sayfanın çökmesini / yenilenmesini engeller
+                        document.getElementById('basvuruFormu').style.display = 'none';
+                        document.getElementById('basariMesaji').classList.remove('hidden');
+                    }
+                </script>
             </div>
         </section>
 
